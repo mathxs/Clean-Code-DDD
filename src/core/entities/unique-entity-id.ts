@@ -2,6 +2,7 @@ import { randomUUID } from "crypto"
 
 export class UniqueEntityID {
   private value: string
+  //não entendi pq ele fez dois metodos iguais
   toString(){
     return this.value
   }
