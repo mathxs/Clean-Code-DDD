@@ -34,11 +34,10 @@ describe('Delete Question', () => {
     )
     await inMemoryQuestionsRepository.create(newQuestion)
 
-    await expect(() => {
-      return sut.execute({
-        authorId: 'author-2',
-        questionId: '123',
-      })
-    }).rejects.toBeInstanceOf(Error)
+    const result = await sut.execute({
+      authorId: 'author-2',
+      questionId: '123',
+    })
+    expect(result.isRight()).toBe(false)
   })
 })

@@ -33,12 +33,10 @@ describe('Delete Answer', () => {
       new UniqueEntityID('123'),
     )
     await inMemoryAnswersRepository.create(newAnswer)
-
-    await expect(() => {
-      return sut.execute({
-        authorId: 'author-2',
-        answerId: '123',
-      })
-    }).rejects.toBeInstanceOf(Error)
+    const result = await sut.execute({
+      authorId: 'author-2',
+      answerId: '123',
+    })
+    expect(result.isRight()).toBe(false)
   })
 })
