@@ -1,5 +1,6 @@
 import { Either, left, right } from './either'
 
+// exemplificando como funciona o either
 function doSomething(shouldSuccess: boolean): Either<string, string> {
   if (shouldSuccess) {
     return right('sucess')
