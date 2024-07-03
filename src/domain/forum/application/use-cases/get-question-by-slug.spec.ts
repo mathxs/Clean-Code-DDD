@@ -22,7 +22,10 @@ describe('Get Question By Slug', () => {
       slug: 'exemplo-pergunta',
     })
 
-    expect(result.value?.question.id).toBeTruthy()
-    expect(result.value?.question.title).toEqual(newQuestion.title)
+    expect(result.isRight()).toBe(true)
+    if (result.isRight()) {
+      expect(result.value?.question.id).toBeTruthy()
+      expect(result.value?.question.title).toEqual(newQuestion.title)
+    }
   })
 })
