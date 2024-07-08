@@ -4,7 +4,7 @@ import { AnswerCommentsRepository } from '../repositories/answer-comments-reposi
 import { AnswersRepository } from '../repositories/answers-repository'
 
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
-import { ResourceNotFoundError } from './errors/resource-not-found-error'
+import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 
 interface CommentOnAnswerUseCaseRequest {
   authorId: string
