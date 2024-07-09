@@ -20,7 +20,7 @@ export class OnAnswerCreated implements EventHandler {
   }
 
   private async sendNewAnswerNotification({ answer }: AnswerCreatedEvent) {
-    console.log(answer)
+    // console.log(answer)
     const question = await this.questionRepository.findByID(
       answer.questionId.toString(),
     )
